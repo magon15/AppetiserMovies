@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imageMovie"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:transitionName="@string/movie_poster_transition"
+            app:layout_constraintDimensionRatio="67:100"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_movie_placeholder" />
+
+        <ImageView
+            android:id="@+id/statusBarGradient"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:src="@drawable/gradient_black_transparent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollViewMovieDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="24dp"
+            android:visibility="visible"
+            tools:paddingTop="244dp"
+            android:scrollIndicators="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutMovieDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/viewGradientMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/gradient_black_transparent_invert"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textMediaType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="MOVIE"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@id/viewGradientMovieDetail"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/viewMovieDetailBG"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/textMovieDescription"
+                    app:layout_constraintTop_toBottomOf="@id/viewGradientMovieDetail" />
+
+                <View
+                    android:id="@+id/viewMovieDetailBGBackup"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewGradientMovieDetail" />
+
+                <TextView
+                    android:id="@+id/textMovieTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:ellipsize="end"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/buttonFavorite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewGradientMovieDetail"
+                    tools:text="Avengers: Infinity War" />
+
+                <TextView
+                    android:id="@+id/textPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="1"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@id/textMovieTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textMovieTitle"
+                    android:text="AUD 14.99" />
+
+                <TextView
+                    android:id="@+id/textGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="1"
+                    android:textColor="@color/gray"
+                    android:textSize="14dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/textPrice"
+                    app:layout_constraintTop_toBottomOf="@id/textMovieTitle"
+                    tools:text="Science Fiction" />
+
+                <ImageButton
+                    android:id="@+id/buttonFavorite"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="16dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ripple_circle_red"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_unfavorite"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textMovieTitle" />
+
+                <TextView
+                    android:id="@+id/textMovieDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="@id/buttonFavorite"
+                    app:layout_constraintStart_toStartOf="@id/textMovieTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textGenre"
+                    tools:text="The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe. " />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/buttonExit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ripple_circle_white"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

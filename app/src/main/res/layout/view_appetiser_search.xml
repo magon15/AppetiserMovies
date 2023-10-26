@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+        tools:background="@color/black">
+
+        <ImageView
+            android:id="@+id/viewSearchBackground"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/view_search_background"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/appetiserSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:queryHint="@string/enter_movie"
+            app:queryBackground="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/viewSearchBackground"
+            app:layout_constraintStart_toStartOf="@id/viewSearchBackground"
+            app:layout_constraintEnd_toEndOf="@id/viewSearchBackground"
+            app:layout_constraintBottom_toBottomOf="@id/viewSearchBackground"/>
+    </merge>
+</layout>

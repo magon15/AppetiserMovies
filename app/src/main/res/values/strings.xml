@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Appetiser Movies</string>
+    <string name="movies">Movies</string>
+    <string name="favorites">Favorites</string>
+    <string name="recently_viewed">Recently Viewed</string>
+    <string name="enter_movie">Enter movie...</string>
+    <string name="movie_poster_transition">movie_poster_transition</string>
+    <string name="no_movies">No movies found.</string>
+</resources>
